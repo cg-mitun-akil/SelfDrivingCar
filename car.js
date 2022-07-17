@@ -64,12 +64,12 @@ class Car {
         const rad = Math.hypot(this.width, this.height) / 2;
         const alpha = Math.atan2(this.width, this.height);
         points.push({
-            x: this.x - Math.sin(this.angle - alpha) * rad,
-            y: this.y - Math.cos(this.angle - alpha) * rad
+            x: this.x - Math.sin(this.angle - alpha) * rad *0.6,
+            y: this.y - Math.cos(this.angle - alpha) * rad*0.6
         });
         points.push({
-            x: this.x - Math.sin(this.angle + alpha) * rad,
-            y: this.y - Math.cos(this.angle + alpha) * rad
+            x: this.x - Math.sin(this.angle + alpha) * rad*0.6,
+            y: this.y - Math.cos(this.angle + alpha) * rad*0.6
         });
         points.push({
             x: this.x - Math.sin(Math.PI + this.angle - alpha) * rad,
