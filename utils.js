@@ -48,7 +48,6 @@ function getRGBA(value) {
     return "rgba(" + R + "," + G + "," + B + "," + alpha + ")";
 }
 
-
 function feedTest(car) {
     car.brain.levels[0].biases = [
         0.45719113770385444,

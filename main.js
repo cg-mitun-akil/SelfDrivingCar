@@ -2,6 +2,7 @@ const carCanvas = document.getElementById("carCanvas");
 carCanvas.height = window.innerHeight;
 carCanvas.width = 200;
 
+
 const networkCanvas = document.getElementById("networkCanvas");
 networkCanvas.width = 300;
 
@@ -12,7 +13,15 @@ const road = new Road(carCanvas.width / 2, carCanvas.width * 0.9);
 
 const N = 300;
 const cars = generateCars(N);
-cars[0] = feedTest(cars[0]);
+
+
+function useTrained() {
+    const car = feedTest(cars[0]);
+    localStorage.setItem("bestBrain",
+        JSON.stringify(car.brain));
+    document.location.reload(true);
+}
+
 let bestCar = cars[0];
 if (localStorage.getItem("bestBrain")) {
     for (let i = 0; i < cars.length; i++) {
@@ -66,6 +75,7 @@ function save() {
 
 function discard() {
     localStorage.removeItem("bestBrain");
+    document.location.reload(true);
 }
 
 function generateCars(N) {
